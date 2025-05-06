@@ -6,6 +6,7 @@ import { DM_Sans } from "next/font/google"
 import Navbar from "@/components/app/navbar"
 import ScrollToTop from "@/components/app/scroll-to-top"
 import SetStylingPref from "@/components/app/set-styling-pref"
+import Survey from "@/components/app/survey"
 import { ThemeProvider } from "@/components/app/theme-provider"
 import { PostHogProvider } from "@/components/posthog-provider"
 import { Toaster } from "@/components/ui/sonner"
@@ -72,6 +73,7 @@ export default function RootLayout({
             <SetStylingPref />
             <ScrollToTop />
             <Toaster />
+            <Survey />
           </ThemeProvider>
         </PostHogProvider>
       </body>
