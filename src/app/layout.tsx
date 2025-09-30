@@ -3,13 +3,11 @@ import "@/styling/globals.css"
 import type { Metadata } from "next"
 import { DM_Sans } from "next/font/google"
 
-import Banner from "@/components/app/banner"
 import Navbar from "@/components/app/navbar"
 import ScrollToTop from "@/components/app/scroll-to-top"
 import SetStylingPref from "@/components/app/set-styling-pref"
 import Survey from "@/components/app/survey"
 import { ThemeProvider } from "@/components/app/theme-provider"
-import { PostHogProvider } from "@/components/posthog-provider"
 import { Toaster } from "@/components/ui/sonner"
 
 const dmSans = DM_Sans({
@@ -63,13 +61,11 @@ export default function RootLayout({
   return (
     <html className="scroll-smooth" suppressHydrationWarning lang="en">
       <body className={dmSans.className}>
-        <PostHogProvider>
           <ThemeProvider
             attribute="class"
             defaultTheme="light"
             disableTransitionOnChange
           >
-            <Banner />
             <Navbar />
             {children}
             <SetStylingPref />
@@ -77,7 +73,6 @@ export default function RootLayout({
             <Toaster />
             <Survey />
           </ThemeProvider>
-        </PostHogProvider>
       </body>
     </html>
   )
